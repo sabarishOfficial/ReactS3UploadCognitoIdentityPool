@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# React S3 File Upload with Cognito Identity Pool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrates how to upload files to Amazon S3 using React.js and Cognito Identity Pool for authentication and authorization.
 
-## Available Scripts
+## Prerequisites
+Before you begin, ensure you have the following:
 
-In the project directory, you can run:
+- AWS Account: You need an AWS account to set up Cognito Identity Pool and S3 bucket.
+- Node.js: Make sure you have Node.js installed on your development machine.
+- AWS CLI (optional): You can install AWS CLI to configure AWS credentials on your local machine.
 
-### `npm start`
+## Installation
+```bash
+git clone https://github.com/sabarishOfficial/ReactS3UploadCognitoIdentityPool.git
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+cd ReactS3UploadCognitoIdentityPool
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+npm install --legacy-peer-deps
+```
+# Configuration
+1. Set Up Cognito Identity Pool:
+ - Go to the AWS Management Console, navigate to Cognito, and create a new Identity Pool.
+- Configure the Identity Pool with the necessary permissions, including access to S3. 
+- Note down the Identity Pool ID.
+2. Configure AWS SDK:
+- Open aws-config.js file in the project.
+- Replace 'your-region' with your AWS region.
+- Replace 'your-identity-pool-id' with your Cognito Identity Pool ID.
 
-### `npm test`
+## Usage
+```bash
+npm start
+```
+Open your browser and go to http://localhost:3000 to view the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use the file upload component to select and upload files to your S3 bucket.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Additional Notes
+- Ensure your S3 bucket has the necessary CORS configuration to allow uploads from your React.js application.
+- Handle errors and security considerations appropriately in your application code.
+- Customize the application UI and functionality according to your requirements.
