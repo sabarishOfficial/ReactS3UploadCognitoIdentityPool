@@ -11,7 +11,7 @@ const S3FileUploadComponent = () => {
   const handleFileUpload = () => {
     if (selectedFile) {
       const params = {
-        Bucket: 'name', //bucket_name
+        Bucket: 'transport-dev', //bucket_name
         Key: selectedFile.name,
         ContentType : selectedFile.type,
         Body: selectedFile,
