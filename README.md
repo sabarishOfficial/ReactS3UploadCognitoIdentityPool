@@ -23,7 +23,7 @@ npm install --legacy-peer-deps
 - Configure the Identity Pool with the necessary permissions, including access to S3. 
 - Note down the Identity Pool ID.
 2. Configure AWS SDK:
-- Open aws-config.js file in the project.
+- Open aws_credentals.js file in the project.
 - Replace 'your-region' with your AWS region.
 - Replace 'your-identity-pool-id' with your Cognito Identity Pool ID.
 
